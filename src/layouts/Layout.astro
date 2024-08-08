@@ -1,0 +1,39 @@
+---
+import "@fontsource-variable/space-grotesk";
+import Nav from "@/components/Nav.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/catolica.svg" />
+    <title>{title}</title>
+    <meta name="author" content="Mayer Andres Chaves Prada" />
+  </head>
+  <body>
+    <Nav />
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Space Grotesk Variable", system-ui, sans-serif;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+</style>
